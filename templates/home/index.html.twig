@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Kis Balázs felvételi{% endblock %}
+{% block body %}
+
+    <h1>Kapcsolatfelvételi űrlap</h1>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-error">{{ message }}</div>
+    {% endfor %}
+
+    {{ form_errors(contactForm) }}
+    {{ form(contactForm) }}
+
+<br>
+<br>
+<a href="{{ admin_url }}">Admin</a>
+{% endblock %}
